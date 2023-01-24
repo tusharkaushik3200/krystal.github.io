@@ -1,0 +1,728 @@
+/*------------------------------------------------------------------
+[Master Stylesheet]
+
+Author: AtypicalThemes
+Template: Vertiglast - Real Estate Landing Page
+Version: 1.0
+
+This file contains the styling for the actual theme, this
+is the file you need to edit to change the look of the
+theme.
+
+-------------------------------------------------------------------
+Table of contents
+
+    I.General
+    II.Page Prealoader
+    III.Header & Navigation
+    IV.Hero Section
+    V.About Section
+    VI.Testimonial Section
+    VII.Plans and Planning
+    VIII.CTA Section
+    IX.Responsive Styles
+
+-------------------------------------------------------------------
+[Color codes]
+
+Background:	#FFF; (white)
+Content:	#222; (black)
+Footer:		#222;
+
+a (standard): #FFD012;
+a (hover): #FFD012;
+a (visited): #FFD012;	
+a (active):	#FFD012;
+
+[Colors]
+
+Primary Color: #FFD012;
+Accent Color: #222;
+-------------------------------------------------------------------*/
+
+@import url('https://fonts.googleapis.com/css?family=Raleway'); /* Raleway Font */
+
+/* --------------------------- /////////// I. GENERAL /////////// --------------------------- */
+/* -Color- */
+.colored {
+    color: #FFD012;
+}
+/* -Link Styling- */
+a {
+    color: #FFD012;
+    font-family: Raleway, sans-serif;
+	text-decoration: none;
+}
+a:visited {
+    color: #FFD012;
+    text-decoration: none;
+}
+a:hover {
+    color: #FFD012;
+	text-decoration: underline;
+}
+a:active {
+    color: #FFD012;
+    text-decoration: underline;
+}
+a:focus {
+    color: #FFD012;
+    text-decoration: none;
+}
+/* -Resets- */
+html, body { 
+    color: #222;
+    font-size: 16px;
+    line-height: 1.5rem; /* 24px */
+    max-width: 100%;
+	overflow-x: hidden;
+}
+/* -Full width fluid container- */
+.full-width {
+    padding-left: 0;
+    padding-right: 0;
+}
+/* -Text Styling */
+h1,h2,h3,h4,h5,h6 {
+	font-family: Raleway, sans-serif;
+    font-weight: 700;
+}
+h1 {
+    font-size: 2.50rem; /* 36px */
+} 
+h2 {
+    font-size: 2.25rem; /* 24px */
+}
+h3 {
+    font-size: 1.50rem; /* 20px */
+}
+h4 {
+    font-size: 1.25rem;
+}
+p {
+    font-family: Raleway, sans-serif;
+    font-size: 0.9375rem; /* 15px */
+    padding: 5px 5px 5px 0;
+    margin: 0;
+}
+.heading {
+    position: relative;
+    background: #fff;
+    text-align: center;
+}
+.heading::before {
+    position: absolute;
+    left: -20px;
+    top: -14px;
+    display: inline-block;
+    content: " ";
+    width: 50px;
+    height: 70px;
+    background: none;
+    border: 3px solid #FFD012;
+    z-index: -2;
+}
+.strong {
+    font-weight: bold;
+}
+.subtle {
+	color: #999;
+}
+.spaced {
+    letter-spacing: 5px;
+}
+.text-left {
+    text-align: left;
+}
+.text-right {
+    text-align: right;
+}
+ul {
+    list-style-type: none;
+    padding: 0;
+}
+/* -Margins and Floats- */
+.floated-left {
+     float: left;
+}
+.floated-right {
+    float: right;
+}
+.inline {
+	display: inline;
+}
+.tiny-margin {
+    margin-bottom: 3em /* 32px */
+}
+.small-margin {
+	margin-bottom: 6em; /* 96px */
+}
+.medium-margin {
+	margin-bottom: 8em; /* 128px */
+}
+.large-margin {
+	margin-bottom: 12em; /* 192px */
+}
+/* -hr- */
+hr {
+    width: 100%;
+    height: 1px;
+    background: #FFD012;
+    margin: 10px 0;
+}
+.short-hr-center::after {
+    border-top: 1px solid;
+    border-color: #FFD012;
+    content: "";
+    display: block;
+    height: 1px;
+    width: 60px;
+    margin: 13px auto 0 auto;
+}
+.short-hr-left::after {
+    border-top: 1px solid;
+    border-color: #FFD012;
+    content: "";
+    display: block;
+    height: 1px;
+    width: 45px;
+    margin: 10px auto 10px 0;
+}
+/* -General Button Styles */
+button {
+    outline: none !important;
+}
+.button {
+    height: auto;
+    width: auto;
+    margin: 20px auto;
+    padding: 5px 15px;
+    font-family: Raleway, sans-serif;
+    font-weight: bold;
+    color: #222;
+    border: none;
+    background: #FFD012;
+	display: inline-block;
+    outline: none;
+	transition: all 0.2s ease;
+    -webkit-backface-visibility: hidden;
+    -webkit-transform: translateZ(0) scale(1.0, 1.0);
+    cursor: pointer;
+}
+.button:visited {
+    color: #222;
+}
+.button:hover {
+    transform: scale(1.1);
+    text-decoration: none;
+    color: #222;
+}
+.button:focus {
+    color: #222;
+}
+/* --------------------------- /////////// II. PAGE PRELOADER /////////// --------------------------- */
+/* -Loading Screen- */
+#loader-wrapper {
+    background: #FFF;
+    height: 100vh;
+    width: 100%;
+    position: fixed;
+    left: 0;
+    top: 0;
+    text-align: center;
+    z-index: 1050;
+}
+.loader-logo {
+    max-width: 100%;
+    height: auto;
+    display: block;
+    position: relative;
+    color: #222;
+    top: 25%;
+    margin: 0 auto;
+    font-family: Raleway, sans-serif;
+    font-size: 2.25rem;
+    font-weight: bold;
+}
+#progress {
+    width: 0;
+    height: 2px;
+    background: #FFD012;
+    position: relative;
+    top: 30%;
+}
+.loader-text {
+    position: relative;
+    color: #222;
+    top: 35%;
+    font-size: 1.5rem;
+}
+
+/* -Loading Screen Animation- */
+.loaded {
+    -moz-transform: translate3d(0px, -100%, 0px);
+    -webkit-transform: translate3d(0px, -100%, 0px);
+    -o-transform: translate(0px, -100%);
+    -ms-transform: translate(0px, -100%);
+    transform: translate3d(0px, -100%, 0px);
+    -webkit-transition: all 0.5s ease; 
+    transition: all 0.5s ease;
+}
+/* --------------------------- /////////// III. HEADER & NAVIGATION /////////// --------------------------- */
+#main-logo {
+    color: #FFF;
+    font-family: Cabin, sans-serif;
+    font-size: 1.5rem; /* 28px */;
+    font-weight: bold;
+}
+.navbar-light {
+    background-color: rgba(255,255,255,0);
+    border: 1px solid rgba(255,255,255,0);
+    z-index: 900;
+}
+.scrolled {
+    background-color: rgba(255,255,255,1); /* navbar background gradient */
+    z-index: 900;
+    border: 1px solid #f9f9f9;
+}
+.navbar-light.scrolled .navbar-nav .nav-link{
+    color: #222;
+}
+.navbar-light.scrolled #main-logo {
+    color: #222;
+}
+.nav-link {
+    font-size: 1rem;
+    margin-top: 5px;
+    transition: 0.2s;
+}
+.navbar-light .navbar-nav .nav-link {
+    color: #FFF;
+}
+.navbar-light .navbar-nav .active>.nav-link {
+    color: #FFF;
+}
+.navbar-light .navbar-nav .nav-link:hover {
+    color: #FFD012;
+}
+.navbar-light .navbar-nav .nav-link:active {
+    color: #FFD012;
+}
+.navbar-light .navbar-nav .nav-link:focus {
+    color: #FFD012;
+}
+
+.navbar-toggler {
+    border: none;
+    cursor: pointer;
+}
+#hamburger .icon-bar {
+    display: block;
+    height: 2px;
+    width: 25px;
+    background: #FFD012;
+    margin: 7px 0;
+    transition: .3s ease-in-out;
+}
+/* - Mobile menu animation - */
+#hamburger .icon-bar:nth-child(1) {
+    -webkit-transform-origin: left center;
+    -moz-transform-origin: left center;
+    -o-transform-origin: left center;
+    transform-origin: left center;
+}
+#hamburger .icon-bar:nth-child(2) {
+   -webkit-transform-origin: left center;
+    -moz-transform-origin: left center;
+    -o-transform-origin: left center;
+    transform-origin: left center;
+}
+#hamburger .icon-bar:nth-child(3) {
+    -webkit-transform-origin: left center;
+    -moz-transform-origin: left center;
+    -o-transform-origin: left center;
+    transform-origin: left center;
+}
+#hamburger.open .icon-bar:nth-child(1) {
+    -webkit-transform: rotate(45deg);
+    -moz-transform: rotate(45deg);
+    -o-transform: rotate(45deg);
+    transform: rotate(45deg);
+}
+#hamburger.open .icon-bar:nth-child(2) {
+    width: 0%;
+    opacity: 0;
+}
+#hamburger.open .icon-bar:nth-child(3) {
+  -webkit-transform: rotate(-45deg);
+  -moz-transform: rotate(-45deg);
+  -o-transform: rotate(-45deg);
+  transform: rotate(-45deg);
+}
+/* --------------------------- /////////// IV. HERO SECTION /////////// --------------------------- */
+/* -Hero Image- */
+.hero-unit {
+    background-image: linear-gradient(rgba(17, 17, 17, 0.8), rgba(17, 17, 17, 0.8)), url(../images/hero.jpg);
+    background-size: cover;
+    background-position: center;
+    background-attachment: fixed;
+    min-height: 720px;
+}
+.angled-section {
+    -webkit-clip-path: polygon(100% 80%, 50% 100%, 0 80%, 0 0, 100% 0);
+    clip-path: polygon(100% 80%, 50% 100%, 0 80%, 0 0, 100% 0);
+}
+#logo {
+    max-width: 50%;
+    height: 50%;
+}
+/* -Hero Image Caption- */
+.hero-caption {
+    display: block;
+    position: relative;
+    margin-top: 15vh;
+    color: #FFF;
+	text-shadow: none; 
+    padding: 20px;
+    z-index: 5;
+    text-align: center;
+}
+.hero-caption h1 {
+    font-size: 3.5rem;
+    margin: 5px 0;
+    font-weight: bold;
+}
+.hero-caption p {
+    font-size: 1.3rem;
+    padding-top: 0;
+}
+#hero-section .button {
+    margin-top: 60px;
+    padding: 6px 15px;
+}
+#arrow {
+    display: block;
+    margin: 40px auto 0 auto;
+    width: 70px;
+    height: auto;
+    font-size: 2rem;
+}
+/* --------------------------- /////////// V. ABOUT SECTION /////////// --------------------------- */
+#about-section .row:nth-of-type(2) {
+    padding: 15px 0 0 0;
+}
+.feature {
+    border: 1px solid #FFD012;
+    padding: 30px;
+    margin-top: 1.5em;
+}
+.feature i {
+    display: block;
+    margin: -60px auto 30px auto;
+    font-size: 3.5rem;
+    width: 150px;
+    height: auto;
+    background: #FFF;
+    padding: 0 40px;
+}
+.feature h3 {
+    margin: 0 0 15px 0;
+}
+.text-wrapper {
+    margin: 30% 25px 0 0;
+    padding: 10px;
+}
+.text-wrapper.flipped {
+    margin: 30% 0 0 25px;
+}
+.border-box {
+    position: absolute;
+    background: none;
+    border: 1px solid #FFD012;
+    width: 190%;
+    height: 105%;
+    top: -2.5%;
+    right: 15px;
+    z-index: -1;
+}
+.border-box.flipped {
+    top: -2.5%;
+    left: 15px;
+}
+/* --------------------------- /////////// VI. TESTIMONIAL SECTION /////////// --------------------------- */
+#testimonial-section {
+    width: 100%;
+    height: auto;
+    color: #FFF;
+    padding: 6em;
+    background-image: linear-gradient(rgba(17, 17, 17, 0.8), rgba(17, 17, 17, 0.8)), url(../images/hero.jpg);
+    background-size: cover;
+    background-position: center;
+    background-attachment: fixed;
+}
+.name {
+    font-family: Raleway, sans-serif;
+    font-weight: bold;
+    font-size: 1.1rem;
+    margin: 10px 0 0 0;
+}
+.name::before {
+    border-top: 1px solid #FFD012;
+    display: inline-block;
+    position: relative;
+    top: -7px;
+    right: 10px;
+    margin: 0 auto;
+    width:  25px;
+    content: "";
+}
+.name::after {
+    border-top: 1px solid #FFD012;
+    display: inline-block;
+    position: relative;
+    top: -7px;
+    left: 10px;
+    margin: 0 auto;
+    width:  25px;
+    content: "";
+}
+/* --------------------------- /////////// VII. PLANS AND PRICING SECTION /////////// --------------------------- */
+/* -Building features and plans- */
+.feature-list ul {
+    margin: 20px 0 0 0;
+}
+.feature-list li {
+    padding: 5px 5px 10px 5px;
+}
+.feature-list li i {
+    margin: 0 5px 0 0;
+}
+.feature-list div {
+   float: right;
+   padding: 10% 0 0 0;
+}
+.carousel-indicators {
+    bottom: -16px;
+}
+.carousel-indicators li {
+    background-color: #F3F3F3;
+}
+.carousel-indicators li.active {
+    background-color: #FFD012;
+}
+/* -House Cards- */
+.house-card {
+    position: relative;
+}
+.house-card .details {
+    display: inline-block;
+    margin: 7%;
+    padding: 30px 0 30px 35px;
+    float: left;
+    background: #FFF;
+}
+.house-card .price {
+    font-size: 1.50rem;
+}
+.house-card .border{
+    position: absolute;
+    display: block;
+    border: 1px solid #FFD012!important;
+    width: 50%;
+    height: 108%;
+    margin: -10px 0 0 0;
+    z-index: -1;
+}
+.lightbox-wrapper {
+    position: relative;
+}
+.icon-open {
+    width: 15%;
+    height: auto;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    background: linear-gradient(rgba(17, 17, 17, 0.8), rgba(17, 17, 17, 0.8));
+    opacity: 0;
+    padding: 10px;
+    transition: 0.3s ease;
+    z-index: 2;
+}
+.lightbox-wrapper:hover .icon-open {
+    opacity: 1;
+}
+.lightbox-wrapper:hover .product-image {
+    transform: scale(0.9);
+}
+.product-image {
+    width: 100%;
+    transition: 0.3s ease;
+}
+/* -Partner logos- */
+.partners li {
+    display: inline-block;
+    padding: 30px 30px 20px 30px;
+}
+.brands-wrapper {
+    position: relative;
+    border: 1px solid #FFD012;
+    padding: 10px;
+}
+.brands-wrapper h3 {
+    position: absolute;
+    top: -15px;
+    left: 50%;
+    transform: translate(-50%, 0);
+    padding: 0 35px;
+    background: #FFF;
+}
+/* --------------------------- /////////// VIII. CTA SECTION /////////// --------------------------- */
+#cta-section {
+    width: 100%;
+    height: auto;
+    color: #FFF;
+    background-image: linear-gradient(rgba(17, 17, 17, 0.8), rgba(17, 17, 17, 0.8)), url(../images/hero.jpg);
+    background-size: cover;
+    background-position: center;
+    background-attachment: fixed;
+}
+#cta-section .container {
+    padding: 12em;
+}
+.button.cta {
+    padding: 10px 15px;
+}
+#footer {
+    width: 100%;
+    height: 40px;
+    padding: 5px 0 0 0;
+    border-top: 1px solid #FFD012;
+    background: linear-gradient(rgba(17, 17, 17, 0.5), rgba(17, 17, 17, 0.5));
+    overflow: hidden;
+}
+/* --------------------------- /////////// IX. RESPONSIVE STYLES /////////// --------------------------- */
+@media (max-width : 1199px) {
+    .house-card .details {
+        padding: 22px 0;
+        margin: 5% 0;
+    }
+    .house-card .border {
+        width: 60%;
+    }
+}
+@media (max-width : 1023px) {
+    #cta-section .container {
+        padding: 9em 3em;
+    }
+    .text-wrapper, .text-wrapper.flipped {
+        margin-top: 5%;
+    }
+    .feature-list div {
+        margin-left: 30%;
+    }
+    .navbar-light{
+        background-color: rgba(17,17,17,0.5); /* navbar background gradient */
+    }
+    .scrolled {
+        background-color: rgba(255,255,255,1); /* navbar background gradient */
+    }
+}
+@media (max-width : 991px) {
+    .house-card .details {
+        padding: 0;
+        margin: 5% 0;
+    }
+    .house-card .border {
+        width: 55%;
+    }
+}
+@media (max-width : 767px) {
+    .small-margin {
+	   margin-bottom: 3em;
+    }
+    .medium-margin {
+        margin-bottom: 6em;
+    }
+    .large-margin {
+        margin-bottom: 8em;
+    }
+    .nav-link {
+        font-size: 1.2rem;
+    }
+    .feature {
+        margin-top: 4em;
+    }
+    .hero-unit {
+        min-height: 0;
+    }
+    .border-box {
+        width: 96%;
+        height: 170%;
+        top: -70%;
+        left: 2%;
+    }
+    .border-box.flipped {
+        left: 2%;
+    }
+    .text-wrapper, .text-wrapper.flipped {
+        margin: 3em 0;
+    }
+    .house-card {
+        text-align: center;
+        margin-bottom: 4em;
+    }
+    .house-card .details {
+        float: none;
+        margin: -10px 0 3em 0;
+        padding: 0 30px;
+    }
+    .house-card .border {
+        width: 96%;
+        height: 100%;
+        margin: 1% 0;
+    }
+    .feature-list div {
+        display: block;
+        width: 70%;
+        float: none;
+        margin: 0 auto 40px auto;
+        padding: 0 0 0 30px;
+    }
+    .partners {
+        margin-top: 2em;
+    }
+    .reset {
+        margin: 0;
+    }
+}
+
+@media (max-width : 479px) {
+    #logo {
+        width: 20%;
+        height: 10%;
+    }
+    h1 {
+        font-size: 2rem;
+    }
+    .hero-caption h1 {
+        font-size: 2.5rem;
+        margin-bottom: 0;
+    }
+    .hero-caption p {
+        font-size: 1.2rem;
+    }
+    .heading:before {
+        display: none;
+    }
+    .border-box {
+        height: 150%;
+        top: -50%;
+    }
+    #testimonial-section {
+        padding: 3em 2em;
+    }
+    .feature-list div {
+        width: 80%;
+    }
+}
